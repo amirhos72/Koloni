@@ -26,7 +26,6 @@ jobs:
           node-version: 20
           cache: 'npm'
       - name: Install dependencies
-        # Using npm install instead of ci is safer for beginners if package-lock.json is missing
         run: npm install
       - name: Build
         run: npm run build
