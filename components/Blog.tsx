@@ -8,7 +8,7 @@ const POSTS = [
     excerpt: "Navigate the social landscape with AI-driven recommendations tailored to your unique vibe. Stop searching, start experiencing.",
     author: "Armita",
     date: "14 Dec 2025",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=800",
+    image: "https://image2url.com/r2/default/images/1770231599127-7b885e39-169b-4915-a502-b3e5d9c84e21.png",
     category: "Guide"
   },
   {
@@ -17,7 +17,7 @@ const POSTS = [
     excerpt: "How our social mining protocol rewards authentic interactions in real-time, turning social capital into tangible perks.",
     author: "System",
     date: "12 Dec 2025",
-    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=800",
+    image: "https://image2url.com/r2/default/images/1770231552780-51044550-09ab-47d6-bb23-64757fe7ef70.png",
     category: "Tech"
   },
   {
@@ -26,7 +26,7 @@ const POSTS = [
     excerpt: "Everything you need to know about the invite-only tier that's reshaping nightlife in major metropolitan hubs.",
     author: "Sarah J.",
     date: "08 Dec 2025",
-    image: "https://images.unsplash.com/photo-1563725832729-1667d4fa4c67?auto=format&fit=crop&q=80&w=800",
+    image: "https://image2url.com/r2/default/images/1770231582606-c666b28f-e024-47e5-a669-a97cb85f1f2c.png",
     category: "Lifestyle"
   },
   {
