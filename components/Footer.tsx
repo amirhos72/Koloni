@@ -29,13 +29,13 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="max-w-md mx-auto mb-12">
-          <p className="text-lg text-white font-medium mb-2 leading-relaxed">
+          <p className="text-base md:text-lg text-white font-medium mb-2 leading-relaxed">
             A centralized platform designed to connect event professionals, venues, and communities through content, communication, and promotion.
           </p>
         </div>
 
         <div className="flex flex-col items-center gap-6 mb-12">
-          <div className="flex flex-wrap justify-center gap-8">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8">
             <a href="#" className="text-gray-400 hover:text-white text-xs uppercase tracking-widest transition-colors">Home</a>
             <a href="#about" className="text-gray-400 hover:text-white text-xs uppercase tracking-widest transition-colors">About Us</a>
             <a href="#contact" className="text-gray-400 hover:text-white text-xs uppercase tracking-widest transition-colors">Contact Us</a>
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
         <div className="w-full h-px bg-white/5 mb-10"></div>
 
         <div className="flex flex-col md:flex-row justify-between items-center w-full gap-6">
-          <div className="text-gray-600 text-[10px] uppercase tracking-wider">
+          <div className="text-gray-600 text-[10px] uppercase tracking-wider text-center md:text-left">
             &copy; 2025 Koloni Inc. All rights reserved.
           </div>
           <div className="flex gap-4">

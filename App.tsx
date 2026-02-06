@@ -6,6 +6,7 @@ import Membership from './components/Membership';
 import Blog from './components/Blog';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [opacity, setOpacity] = useState(1);
@@ -75,6 +76,8 @@ function App() {
           <Footer />
         </div>
       </div>
+      
+      <ScrollToTop />
     </div>
   );
 }

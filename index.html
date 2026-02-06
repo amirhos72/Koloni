@@ -24,7 +24,7 @@
                 goldDim: '#8a7645',
                 surface: '#0a0a0a',
                 accent1: '#998553',
-                accent2: '#BBC068'
+                accent2: '#998553'
               }
             },
             animation: {
@@ -32,6 +32,7 @@
               'slide-up': 'slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
               'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
               'scanner': 'scanner 4s linear infinite',
+              'float': 'float 6s ease-in-out infinite',
             },
             keyframes: {
               fadeIn: {
@@ -47,6 +48,10 @@
                 '50%': { top: '100%' },
                 '51%': { top: '100%' },
                 '100%': { top: '0%' }, 
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
               }
             }
           }
@@ -54,6 +59,10 @@
       }
     </script>
     <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+      }
       body {
         background-color: #050505;
         color: #ffffff;
@@ -83,9 +92,11 @@
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <div id="root"></div>
     <script type="module" src="./index.tsx"></script>
-  </body>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>

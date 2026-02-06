@@ -62,14 +62,13 @@ const TierCard: React.FC<{
 
 const Membership: React.FC = () => {
   return (
-    <section id="membership" className="py-32 bg-transparent border-t border-white/5 relative z-10">
+    <section id="membership" className="py-20 md:py-32 bg-transparent border-t border-white/5 relative z-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
           
           {/* Section Info */}
           <div className="lg:col-span-4">
-             <div className="sticky top-32">
-                <span className="font-mono text-xs uppercase tracking-widest text-koloni-gold mb-6 block">The Hierarchy</span>
+             <div className="relative lg:sticky lg:top-32 mb-10 lg:mb-0">
                 <h2 className="font-display font-bold text-4xl text-white mb-6">UNLOCK<br/>STATUS</h2>
                 <p className="text-gray-400 font-light text-lg mb-8 leading-relaxed">
                   Your actions define your access. Ascend through tiers to unlock exclusive venues, features, and social capital.

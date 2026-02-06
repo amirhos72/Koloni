@@ -16,7 +16,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) 
         onClick={onClick}
         aria-expanded={isOpen}
       >
-        <span className={`font-display font-medium text-lg transition-colors pr-8 ${isOpen ? 'text-koloni-gold' : 'text-white group-hover:text-koloni-gold'}`}>
+        <span className={`font-display font-medium text-base md:text-lg transition-colors pr-4 md:pr-8 ${isOpen ? 'text-koloni-gold' : 'text-white group-hover:text-koloni-gold'}`}>
           {question}
         </span>
         <div className={`flex-shrink-0 p-2 rounded-full border border-white/10 transition-all duration-300 ${isOpen ? 'bg-koloni-gold text-black rotate-180 border-koloni-gold' : 'bg-white/5 text-white group-hover:border-koloni-gold group-hover:bg-white/10'}`}>
@@ -27,7 +27,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) 
         className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 mb-6' : 'grid-rows-[0fr] opacity-0'}`}
       >
         <div className="overflow-hidden">
-          <p className="text-gray-400 font-light leading-relaxed pr-8 text-sm md:text-base">
+          <p className="text-gray-400 font-light leading-relaxed pr-4 md:pr-8 text-sm md:text-base">
             {answer}
           </p>
         </div>
@@ -63,25 +63,18 @@ const FAQ: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="py-32 bg-transparent relative border-t border-white/5">
+    <section id="faq" className="py-20 md:py-32 bg-transparent relative border-t border-white/5">
       {/* Background Decor handled by App.tsx */}
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-1 h-4 bg-koloni-gold"></div>
-            <span className="font-mono text-xs uppercase tracking-widest text-koloni-gold">Support</span>
-          </div>
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-white mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-6">
             COMMON <br /> QUERIES
           </h2>
-           <p className="text-gray-400 text-lg font-light max-w-lg mx-auto">
-             Everything you need to navigate the ecosystem. Can't find the answer? Contact support directly.
-           </p>
         </div>
 
-        <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 md:p-10 rounded-3xl hover:border-white/20 transition-colors duration-500 shadow-2xl">
+        <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-4 md:p-10 rounded-2xl md:rounded-3xl hover:border-white/20 transition-colors duration-500 shadow-2xl">
           {faqs.map((faq, index) => (
             <FAQItem
               key={index}

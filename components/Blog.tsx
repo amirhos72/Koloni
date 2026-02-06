@@ -61,27 +61,23 @@ const Blog: React.FC = () => {
     : POSTS.filter(post => post.category === activeCategory);
 
   return (
-    <section id="blog" className="py-32 bg-transparent relative border-t border-white/5 overflow-hidden">
+    <section id="blog" className="py-20 md:py-32 bg-transparent relative border-t border-white/5 overflow-hidden">
         {/* Decorative Background Elements handled in App.tsx now, but keeping subtle local ones if needed */}
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
             {/* Header Section */}
             <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
                 <div className="max-w-2xl">
-                    <div className="flex items-center gap-2 mb-6 animate-fade-in">
-                        <div className="w-1 h-4 bg-koloni-gold"></div>
-                        <span className="font-mono text-xs uppercase tracking-widest text-koloni-gold">Transmissions</span>
-                    </div>
-                    <h2 className="font-display font-bold text-5xl md:text-6xl text-white leading-[0.9] mb-6 animate-slide-up">
+                    <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[0.9] mb-6 animate-slide-up">
                         LATEST <br /> <span className="text-gray-500">INTEL.</span>
                     </h2>
-                     <p className="text-gray-400 font-light text-lg max-w-md animate-slide-up" style={{ animationDelay: '0.1s' }}>
+                     <p className="text-gray-400 font-light text-base md:text-lg max-w-md animate-slide-up" style={{ animationDelay: '0.1s' }}>
                         Tune in to our latest updates. Expert guides, system announcements, and community highlights.
                     </p>
                 </div>
                 
                 {/* Navigation Controls */}
-                <div className="flex gap-4">
+                <div className="hidden md:flex gap-4">
                     <button 
                       onClick={() => scroll('left')} 
                       className="group w-14 h-14 rounded-full border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-black hover:border-white transition-all duration-300 active:scale-95 shadow-lg"
@@ -119,12 +115,12 @@ const Blog: React.FC = () => {
             {/* Carousel Container */}
             <div 
                 ref={scrollRef}
-                className="flex gap-8 overflow-x-auto pb-12 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0"
+                className="flex gap-6 md:gap-8 overflow-x-auto pb-12 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0"
             >
                 {filteredPosts.map((post, i) => (
                     <article 
                         key={post.id} 
-                        className="min-w-[320px] md:min-w-[420px] snap-start group cursor-pointer flex flex-col"
+                        className="min-w-[300px] md:min-w-[420px] snap-center md:snap-start group cursor-pointer flex flex-col"
                         style={{ animationDelay: `${i * 0.1}s` }}
                     >
                         {/* Image Container with Hover Effect */}
@@ -158,7 +154,7 @@ const Blog: React.FC = () => {
                                 </div>
                             </div>
                             
-                            <h3 className="font-display font-bold text-2xl text-white group-hover:text-koloni-gold transition-colors leading-tight min-h-[3.5rem]">
+                            <h3 className="font-display font-bold text-xl md:text-2xl text-white group-hover:text-koloni-gold transition-colors leading-tight min-h-[3.5rem]">
                                 {post.title}
                             </h3>
                             
