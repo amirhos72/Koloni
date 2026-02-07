@@ -14,13 +14,13 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
   ...props 
 }) => {
-  const baseStyles = "inline-flex items-center justify-center font-display font-bold uppercase transition-all duration-300 focus:outline-none tracking-wider backdrop-blur-sm";
+  const baseStyles = "inline-flex items-center justify-center font-display font-bold uppercase transition-all duration-300 focus:outline-none tracking-wider backdrop-blur-sm cursor-pointer touch-manipulation active:scale-95";
   
   const variants = {
-    primary: "bg-koloni-gold text-black hover:bg-white border border-koloni-gold hover:border-white rounded-full shadow-[0_0_20px_rgba(191,166,104,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:-translate-y-0.5",
-    outline: "bg-white/5 text-koloni-gold border border-koloni-gold/50 hover:bg-koloni-gold hover:text-black hover:border-koloni-gold rounded-full hover:-translate-y-0.5",
-    ghost: "bg-transparent text-white hover:text-koloni-gold hover:bg-white/5 rounded-full",
-    store: "bg-white/5 backdrop-blur-md text-white border border-white/10 hover:bg-white/10 hover:border-white/30 normal-case tracking-normal font-sans rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+    primary: "bg-koloni-gold text-black hover:bg-white border border-koloni-gold hover:border-white rounded-full shadow-[0_0_20px_rgba(191,166,104,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-none",
+    outline: "bg-white/5 text-koloni-gold border border-koloni-gold/50 hover:bg-koloni-gold hover:text-black hover:border-koloni-gold rounded-full hover:-translate-y-0.5 active:translate-y-0",
+    ghost: "bg-transparent text-white hover:text-koloni-gold hover:bg-white/5 rounded-full active:bg-white/10",
+    store: "bg-white/5 backdrop-blur-md text-white border border-white/10 hover:bg-white/10 hover:border-white/30 normal-case tracking-normal font-sans rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
   };
 
   const sizes = {

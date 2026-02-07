@@ -1,91 +1,100 @@
 import React from 'react';
-import { ShieldCheck, Zap, Coins, Star, Lock, Brain, TrendingUp } from 'lucide-react';
+import { ShieldCheck, Banknote, Coins, Star, TrendingUp } from 'lucide-react';
 
-const FeatureCard: React.FC<{ 
-  title: string; 
-  desc: string; 
+const BentoCard: React.FC<{
+  title: string;
+  desc: string;
   icon: React.ElementType;
-}> = ({ title, desc, icon: Icon }) => (
-  <div className="group relative p-6 md:p-8 bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl transition-all duration-500 hover:bg-white/10 hover:border-white/20 hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] overflow-hidden">
-    
-    {/* Clean, no corner markers for glass style */}
-
-    <div className="mb-5 md:mb-6 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/5 flex items-center justify-center text-white group-hover:text-koloni-gold group-hover:scale-110 transition-all duration-300 border border-white/5 group-hover:border-koloni-gold/30 shadow-inner">
-      <Icon size={20} className="md:w-6 md:h-6" strokeWidth={1.5} />
+  className?: string;
+  highlight?: boolean;
+}> = ({ title, desc, icon: Icon, className = "", highlight = false }) => (
+  <div className={`
+    group relative overflow-hidden rounded-3xl p-6 md:p-8 transition-all duration-500 hover:-translate-y-1
+    ${highlight 
+      ? 'bg-gradient-to-br from-koloni-gold/20 via-black/40 to-black/80 border border-koloni-gold/30' 
+      : 'glass-panel hover:bg-white/5'
+    }
+    ${className}
+  `}>
+    <div className={`
+      w-10 h-10 md:w-12 md:h-12 rounded-2xl flex items-center justify-center mb-4 md:mb-6 transition-transform duration-500 group-hover:scale-110
+      ${highlight ? 'bg-koloni-gold text-black' : 'bg-white/10 text-white'}
+    `}>
+      <Icon size={20} className="md:w-6 md:h-6" />
     </div>
     
-    <h3 className="font-display font-semibold text-lg md:text-xl text-white mb-2 md:mb-3">{title}</h3>
-    <p className="font-sans text-xs md:text-sm text-gray-400 font-light leading-relaxed group-hover:text-gray-300 transition-colors">
+    <h3 className="font-display font-bold text-xl md:text-2xl text-white mb-2 md:mb-3">{title}</h3>
+    <p className="text-sm text-gray-400 font-light leading-relaxed">
       {desc}
     </p>
+
+    {/* Hover Effect */}
+    <div className="absolute inset-0 bg-gradient-to-t from-koloni-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
   </div>
 );
 
 const Features: React.FC = () => {
   return (
-    <section id="about" className="py-20 md:py-32 bg-transparent relative z-20">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="about" className="py-16 md:py-20 relative z-20 px-4 md:px-6">
+      <div className="max-w-7xl mx-auto">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 border-b border-white/10 pb-6 md:pb-10">
-           <div className="max-w-2xl">
-             <h2 className="font-display font-bold text-3xl md:text-5xl text-white leading-tight">
-               YOUR SOCIAL LIFE, <br />
-               UPGRADED.
-             </h2>
-           </div>
+        <div className="mb-12 md:mb-16 text-left md:text-center max-w-3xl mx-auto">
+           <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-4 md:mb-6 leading-tight">
+             FOR <span className="text-koloni-gold">CONNECTION...</span>
+           </h2>
+           <p className="text-gray-400 text-base md:text-lg font-light">
+             A complete ecosystem merging social discovery with financial incentives.
+           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Bento Grid - Mobile: Single col, Tablet/Desktop: Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 auto-rows-auto md:auto-rows-[minmax(280px,auto)]">
           
-          {/* Highlight Feature - Premium Glass */}
-          <div className="md:col-span-2 md:row-span-1 bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-10 relative overflow-hidden group transition-all duration-500 hover:border-koloni-gold/30 hover:shadow-[0_10px_40px_-10px_rgba(191,166,104,0.1)] rounded-3xl">
-             <div className="absolute top-0 right-0 p-6 md:p-10 opacity-10 group-hover:opacity-20 transition-opacity">
-                <Coins size={80} className="md:w-[120px] md:h-[120px]" />
-             </div>
-             <div className="relative z-10 h-full flex flex-col justify-center">
-               <div className="w-10 h-10 md:w-12 md:h-12 bg-koloni-gold/10 rounded-full flex items-center justify-center text-koloni-gold mb-4 md:mb-6 border border-koloni-gold/20 backdrop-blur-sm">
-                 <Coins size={20} className="md:w-6 md:h-6" />
-               </div>
-               <h3 className="font-display font-bold text-2xl md:text-3xl text-white mb-3 md:mb-4">Earn While You Socialize</h3>
-               <p className="font-sans text-gray-400 text-base md:text-lg font-light leading-relaxed max-w-md">
-                 Turn your nights out into real rewards. Earn points for attending events, bringing friends, and engaging with the community. Redeem them for tickets, drinks, and more.
-               </p>
+          {/* Main Feature - Spans 2x2 on large, 1x1 on mobile */}
+          <div className="md:col-span-2 md:row-span-2 relative group rounded-3xl overflow-hidden border border-koloni-gold/20 min-h-[360px] md:min-h-0">
+             <div className="absolute inset-0 bg-[url('https://image2url.com/r2/default/images/1770489552390-e224dee3-defd-4a63-b871-384bf92d12a3.png')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-40"></div>
+             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+             
+             <div className="relative h-full p-6 md:p-12 flex flex-col justify-end">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-koloni-gold rounded-full flex items-center justify-center text-black mb-4 md:mb-6">
+                  <Coins size={24} className="md:w-[28px] md:h-[28px]" />
+                </div>
+                <h3 className="font-display font-bold text-2xl md:text-4xl text-white mb-3 md:mb-4">Earn While You Socialize</h3>
+                <p className="font-sans text-gray-300 text-base md:text-lg font-light max-w-md leading-relaxed">
+                  Turn your nights out into real rewards. Earn points for attending events and bringing friends. Redeem for tickets, drinks, and more.
+                </p>
              </div>
           </div>
 
-          {/* Feature Grid */}
-          <FeatureCard 
+          <BentoCard 
             title="Real Connections" 
-            desc="A verified community free from bots and fake profiles. Connect with real people who share your vibe."
+            desc="A verified community free from bots. Connect with real people who share your vibe."
             icon={ShieldCheck}
+            className="md:col-span-1"
           />
-          <FeatureCard 
-            title="Get Paid to Party" 
-            desc="Share events with your unique link. When your friends buy tickets, you earn cash or credit instantly."
-            icon={Zap}
+          
+          <BentoCard 
+            title="Get Paid" 
+            desc="Share events with your unique link. When friends buy tickets, you earn cash instantly."
+            icon={Banknote}
+            className="md:col-span-1"
+            highlight
           />
-          <FeatureCard 
+
+          <BentoCard 
             title="Level Up" 
-            desc="Build your reputation. Consistent activity and good vibes unlock VIP status and exclusive perks."
+            desc="Consistent activity unlocks VIP status and exclusive location perks."
             icon={Star}
+            className="md:col-span-1"
           />
-          <FeatureCard 
-            title="Create & Share" 
-            desc="Make your profile pop. Use our smart creative tools to design stunning posts and stories in seconds."
-            icon={Brain}
-          />
-          <FeatureCard 
-            title="No Creeps Allowed" 
-            desc="Your DMs, your rules. Unwanted messages stay hidden and blurred until you decide to connect."
-            icon={Lock}
-          />
-          <FeatureCard 
-            title="Know Before You Go" 
-            desc="Check the vibe before you leave the house. See live crowd levels and busy times at your favorite spots."
+
+          <BentoCard 
+            title="Vibe Check" 
+            desc="See live crowd levels and busy times before you leave the house."
             icon={TrendingUp}
+            className="md:col-span-1"
           />
+
         </div>
       </div>
     </section>
