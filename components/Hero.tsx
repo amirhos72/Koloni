@@ -68,6 +68,7 @@ const Hero: React.FC = () => {
                   src={HERO_IMAGE_URL} 
                   alt="Koloni App Interface" 
                   className="w-full h-auto object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)] md:drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                  fetchpriority="high"
                 />
              </div>
         </div>

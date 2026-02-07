@@ -129,6 +129,8 @@ const Blog: React.FC = () => {
                                 src={post.image} 
                                 alt={post.title} 
                                 className="object-cover w-full h-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out md:grayscale md:group-hover:grayscale-0"
+                                loading="lazy"
+                                decoding="async"
                             />
                             
                             {/* Hover Arrow (Desktop Only) */}
