@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
           playsInline 
           className="w-full h-full object-cover opacity-[0.35] grayscale"
         >
-          <source src="https://demo.awaikenthemes.com/assets/videos/gitar-video.mp4" type="video/mp4" />
+          <source src="https://s8.uupload.ir/filelink/WKc2N82nGVxe_35d5d9e893/gitar-video_mbom.mp4" />
         </video>
         <div className="absolute inset-0 bg-[#020202]/60 mix-blend-multiply" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#020202] via-transparent to-[#020202]" />
