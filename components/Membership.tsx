@@ -68,17 +68,19 @@ const MembershipCard: React.FC<{
 
 const Membership: React.FC = () => {
   return (
-    <section id="membership" className="py-16 md:py-20 relative z-10 px-4 md:px-6">
+    <section id="membership" className="py-16 md:py-20 relative z-10 px-8 md:px-16 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-4 md:gap-8">
             <div>
-                <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-4">UNLOCK STATUS</h2>
+                <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-4 leading-tight">
+                    UNLOCK <br /> <span className="text-koloni-gold">STATUS</span>
+                </h2>
                 <p className="text-gray-400 font-light max-w-md text-sm md:text-base">Ascend through tiers to unlock exclusive venues, features, and social capital.</p>
             </div>
             <div className="hidden md:block w-32 h-px bg-white/10"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <MembershipCard 
               type="standard"
               name="Member"

@@ -12,7 +12,7 @@ const BentoCard: React.FC<{
     group relative overflow-hidden rounded-3xl p-6 md:p-8 transition-all duration-500 hover:-translate-y-1
     ${highlight 
       ? 'bg-gradient-to-br from-koloni-gold/20 via-black/40 to-black/80 border border-koloni-gold/30' 
-      : 'glass-panel hover:bg-white/5'
+      : 'glass-panel border border-white/10 hover:bg-white/5'
     }
     ${className}
   `}>
@@ -35,7 +35,7 @@ const BentoCard: React.FC<{
 
 const Features: React.FC = () => {
   return (
-    <section id="about" className="py-16 md:py-20 relative z-20 px-4 md:px-6">
+    <section id="about" className="py-16 md:py-20 relative z-20 px-8 md:px-16 lg:px-24">
       <div className="max-w-7xl mx-auto">
         
         <div className="mb-12 md:mb-16 text-left md:text-center max-w-3xl mx-auto">
@@ -47,10 +47,10 @@ const Features: React.FC = () => {
            </p>
         </div>
 
-        {/* Bento Grid - Mobile: Single col, Tablet/Desktop: Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 auto-rows-auto md:auto-rows-[minmax(280px,auto)]">
+        {/* Bento Grid with Standardized Gaps */}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 auto-rows-auto md:auto-rows-[minmax(280px,auto)]">
           
-          {/* Main Feature - Spans 2x2 on large, 1x1 on mobile */}
+          {/* Main Feature - Spans 2x2 on large */}
           <div className="md:col-span-2 md:row-span-2 relative group rounded-3xl overflow-hidden border border-koloni-gold/20 min-h-[360px] md:min-h-0">
              <div className="absolute inset-0 bg-[url('https://image2url.com/r2/default/images/1770489552390-e224dee3-defd-4a63-b871-384bf92d12a3.png')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-40"></div>
              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>

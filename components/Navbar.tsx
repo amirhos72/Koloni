@@ -46,23 +46,26 @@ const Navbar: React.FC = () => {
               : 'bg-transparent border-transparent'
             }
             border rounded-full flex items-center
-            ${isScrolled || isMobileMenuOpen ? 'py-2 px-4 md:py-3 md:px-6' : 'py-3 px-4 md:py-4 md:px-6'}
+            ${isScrolled || isMobileMenuOpen 
+              ? 'py-2 px-4 md:py-2.5 md:px-4 lg:py-3 lg:px-6' 
+              : 'py-3 px-4 md:py-3 md:px-4 lg:py-4 lg:px-6'
+            }
           `}
         >
           {/* Left Side: Logo */}
           <div className="flex-1 flex justify-start">
             <a href="#" className={`flex items-center transition-all duration-500 ease-out origin-left z-[70] ${isScrolled ? 'scale-90' : 'scale-100'}`}>
-              <HeaderLogo className="h-8 md:h-8 w-auto" />
+              <HeaderLogo className="h-6 md:h-7 lg:h-8 w-auto" />
             </a>
           </div>
 
           {/* Center: Desktop Nav */}
-          <div className="hidden md:flex items-center gap-1 bg-white/5 rounded-full p-1 border border-white/5">
+          <div className="hidden md:flex items-center gap-0.5 lg:gap-1 bg-white/5 rounded-full p-1 border border-white/5">
             {navLinks.map((link) => (
               <a 
                 key={link.label} 
                 href={link.href} 
-                className="px-4 py-2 rounded-full text-[10px] lg:text-[11px] font-medium uppercase tracking-widest text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 whitespace-nowrap"
+                className="px-2 lg:px-4 py-2 rounded-full text-[9px] lg:text-[11px] font-medium uppercase tracking-widest text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 whitespace-nowrap"
               >
                 {link.label}
               </a>
@@ -72,7 +75,11 @@ const Navbar: React.FC = () => {
           {/* Right Side: Action */}
           <div className="flex-1 flex justify-end">
             <div className={`flex items-center gap-2 z-[70] transition-all duration-500 ease-out origin-right ${isScrolled ? 'scale-90' : 'scale-100'}`}>
-              <Button variant="primary" size="sm" className="hidden md:flex rounded-full !py-2 !px-6 text-xs whitespace-nowrap">
+              <Button 
+                variant="primary" 
+                size="sm" 
+                className="hidden md:flex rounded-full !py-1.5 !px-4 lg:!py-2 lg:!px-6 text-[10px] lg:text-xs whitespace-nowrap"
+              >
                 Book Now
               </Button>
               
@@ -103,7 +110,7 @@ const Navbar: React.FC = () => {
           {/* Background Elements for Mobile Menu */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-koloni-gold/10 rounded-full blur-[80px] pointer-events-none"></div>
 
-         <div className="flex flex-col gap-4 text-center relative z-10 w-full px-8">
+         <div className="flex flex-col gap-4 text-center relative z-10 w-full px-12">
            {navLinks.map((link, idx) => (
               <a 
                 key={link.label} 
@@ -117,7 +124,7 @@ const Navbar: React.FC = () => {
             ))}
          </div>
          
-         <div className={`mt-6 relative z-10 transition-all duration-700 w-full px-8 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '300ms' }}>
+         <div className={`mt-6 relative z-10 transition-all duration-700 w-full px-12 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '300ms' }}>
             <Button variant="primary" size="lg" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
               Book Now
             </Button>

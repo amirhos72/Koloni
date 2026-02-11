@@ -63,12 +63,12 @@ const Blog: React.FC = () => {
   return (
     <section id="blog" className="py-16 md:py-32 bg-transparent relative border-t border-white/5 overflow-hidden">
         
-        <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24 relative z-10">
             {/* Header Section */}
             <div className="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-12 gap-6 md:gap-8">
                 <div className="max-w-2xl">
                     <h2 className="font-display font-bold text-3xl md:text-5xl lg:text-6xl text-white leading-[0.9] mb-4 md:mb-6 animate-slide-up">
-                        LATEST <br /> <span className="text-gray-500">INTEL.</span>
+                        LATEST <br /> <span className="text-koloni-gold">INTEL.</span>
                     </h2>
                      <p className="text-gray-400 font-light text-sm md:text-lg max-w-md animate-slide-up" style={{ animationDelay: '0.1s' }}>
                         Tune in to our latest updates. Expert guides, system announcements, and community highlights.
@@ -111,10 +111,10 @@ const Blog: React.FC = () => {
                 ))}
             </div>
 
-            {/* Carousel Container */}
+            {/* Carousel Container - Standardized Gaps */}
             <div 
                 ref={scrollRef}
-                className="flex gap-4 md:gap-8 overflow-x-auto pb-12 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0"
+                className="flex gap-6 md:gap-8 overflow-x-auto pb-12 snap-x snap-mandatory scrollbar-hide -mx-8 px-8 md:mx-0 md:px-0"
             >
                 {filteredPosts.map((post, i) => (
                     <article 

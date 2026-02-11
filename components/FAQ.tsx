@@ -66,11 +66,11 @@ const FAQ: React.FC = () => {
     <section id="faq" className="py-20 md:py-32 bg-transparent relative border-t border-white/5">
       {/* Background Decor handled by App.tsx */}
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
+      <div className="max-w-4xl mx-auto px-8 md:px-16 lg:px-24 relative z-10">
         
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-6">
-            COMMON <br /> QUERIES
+            COMMON <br /> <span className="text-koloni-gold">QUERIES</span>
           </h2>
         </div>
 

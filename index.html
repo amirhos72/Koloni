@@ -35,7 +35,7 @@
               'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
               'scanner': 'scanner 4s linear infinite',
               'float': 'float 6s ease-in-out infinite',
-              'gradient-pan': 'gradient-pan 1.5s ease-in-out infinite alternate',
+              'gradient-pan': 'gradient-pan 8s linear infinite',
             },
             keyframes: {
               fadeIn: {
@@ -57,8 +57,8 @@
                 '50%': { transform: 'translateY(-20px)' },
               },
               'gradient-pan': {
-                '0%': { 'background-position': '0% center' },
-                '100%': { 'background-position': '100% center' },
+                '0%': { 'background-position': '0% 50%' },
+                '100%': { 'background-position': '200% 50%' },
               }
             }
           }
